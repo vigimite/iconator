@@ -16,3 +16,13 @@ This repository contains a simple file-icon lookup library as may be used by IDE
 Keep your audience in mind. We’re not interested in a perfect solution but one where we see your thought-process and working style in action.
   
 You may add these notes at the end of this file if you wish.
+
+## Thoughts on the exercise
+
+The architecture, tradeoffs and production considerations are in [the design note](DESIGN.md).
+
+My main aim was to keep this small. I would normally reach for Axum, but for two fixed routes it's overkill.
+
+I spent some time questioning the filename allocation in the asset lookup and also tried a numeric index but eventually removed it.
+It would make requests cheaper in principle, but adds more complexity to the startup logic and assumptions about the IDs.
+The straightforward lookup is easy to follow and I can always revisit it if there is a reason to.

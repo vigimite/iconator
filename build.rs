@@ -20,4 +20,5 @@ fn main() {
     fs::write(folder_icons_path, folder_icons.into_fst().as_bytes()).unwrap();
 
     println!("cargo:rerun-if-changed=build.rs");
+    println!("cargo:rerun-if-changed=icons");
 }

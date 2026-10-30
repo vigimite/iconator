@@ -4,8 +4,13 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+form_urlencoded = "1.2"
 fst = "0.4.7"
-lazy_static = "1.5.0"
+http-body-util = "0.1"
+hyper = { version = "1", features = ["http1", "server"] }
+hyper-util = { version = "0.1", features = ["tokio"] }
+rust-embed = { version = "8.13", features = ["debug-embed", "include-exclude"] }
+tokio = { version = "1", features = ["macros", "net", "rt"] }
 
 [build-dependencies]
 fst = "0.4.7"
